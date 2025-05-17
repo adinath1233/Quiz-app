@@ -286,4 +286,48 @@
       }
     }
   }
+}
+
+@media (max-width: 900px) {
+  .terminal-window {
+    max-width: 99vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .terminal-window {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    font-size: 0.92rem;
+    min-width: 0;
+  }
+  .terminal-content .question {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    word-break: break-word;
+  }
+  .options {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .option {
+    padding: 0.8rem 0.5rem;
+    font-size: 1rem;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 400px) {
+  .terminal-window {
+    padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+    font-size: 0.8rem;
+  }
+  .terminal-content .question {
+    font-size: 0.95rem;
+    margin-bottom: 0.7rem;
+  }
+  .option {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.2rem;
+  }
 } 

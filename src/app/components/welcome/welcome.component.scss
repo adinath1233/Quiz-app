@@ -228,4 +228,58 @@ body.light-mode .terminal-window .terminal-content .start-btn:hover,
   background: #fff;
   color: #0077ff;
   box-shadow: 0 0 20px #0077ff;
+}
+
+@media (max-width: 900px) {
+  .terminal-window {
+    max-width: 99vw;
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+  .welcome-content {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .terminal-window {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    font-size: 0.92rem;
+    min-width: 0;
+  }
+  .welcome-content {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+  }
+  .terminal-content h1, .welcome-content h1 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+    word-break: break-word;
+  }
+  .terminal-content .description, .welcome-content .description,
+  .terminal-content .instruction, .welcome-content .instruction {
+    font-size: 0.98rem;
+    word-break: break-word;
+    padding: 0 0.1rem;
+  }
+  .start-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .terminal-window {
+    padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+    font-size: 0.8rem;
+  }
+  .welcome-content {
+    padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+  }
+  .terminal-content h1, .welcome-content h1 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .start-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.7rem;
+  }
 } 
