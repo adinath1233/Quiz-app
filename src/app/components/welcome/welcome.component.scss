@@ -1,0 +1,231 @@
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/assets/images/code-bg.jpg') center/cover no-repeat;
+  position: relative;
+  padding: 2rem;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  z-index: 1;
+}
+
+.welcome-content {
+  max-width: 800px;
+  text-align: center;
+  padding: 3rem;
+  border-radius: 15px;
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+
+  .logo-container {
+    margin-bottom: 2rem;
+    
+    .logo-icon {
+      font-size: 64px;
+      width: 64px;
+      height: 64px;
+      color: #3f51b5;
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    color: #34495e;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .instruction {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+  }
+
+  .start-btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+
+    mat-icon {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.welcome-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('/assets/images/Gemini_Generated_Image_dqaijfdqaijfdqai.png') center/cover no-repeat;
+  position: relative;
+  font-family: 'Fira Mono', 'Consolas', 'Courier New', monospace;
+  overflow: hidden;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+  button {
+    background: rgba(0,0,0,0.7);
+    border: none;
+    border-radius: 50%;
+    padding: 0.7rem;
+    color: #00ffe7;
+    cursor: pointer;
+    transition: background 0.2s;
+    outline: none;
+    &:hover {
+      background: #00ffe7;
+      color: #222;
+    }
+    mat-icon {
+      font-size: 1.5rem;
+      vertical-align: middle;
+    }
+  }
+}
+
+.welcome-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 30, 0.85);
+  z-index: 1;
+}
+
+.terminal-window {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 8vh auto 0 auto;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  box-shadow: 0 0 40px #00ffe7aa, 0 0 0 2px #222;
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  color: #00ffe7;
+  text-shadow: 0 0 8px #00ffe7cc;
+  font-family: inherit;
+  .terminal-bar {
+    height: 18px;
+    background: #001a1a;
+    border-bottom: 1px solid #00ffe7;
+    border-radius: 8px 8px 0 0;
+    margin: -2.5rem -2rem 2rem -2rem;
+  }
+  .terminal-content {
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 0.2em;
+      margin-bottom: 1.5rem;
+      color: #00ffe7;
+      text-align: center;
+      text-shadow: 0 0 12px #00ffe7;
+    }
+    .brand {
+      color: #fff;
+      background: #00ffe7;
+      padding: 0 0.3em;
+      border-radius: 3px;
+      text-shadow: none;
+    }
+    .description, .instruction {
+      color: #00ffe7;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .start-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #00ffe7;
+      color: #001a1a;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      font-family: inherit;
+      font-weight: bold;
+      padding: 0.7rem 2.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00ffe7cc;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      mat-icon {
+        margin-right: 0.5em;
+      }
+      &:hover {
+        background: #fff;
+        color: #00ffe7;
+        box-shadow: 0 0 20px #00ffe7;
+      }
+    }
+  }
+}
+
+body.light-mode .welcome-bg,
+.light-mode .welcome-bg {
+  background: url('/assets/images/Gemini_Generated_Image_dqaijfdqaijfdqai.png') center/cover no-repeat;
+}
+body.light-mode .welcome-bg::before,
+.light-mode .welcome-bg::before {
+  background: rgba(255,255,255,0.7);
+}
+body.light-mode .terminal-window,
+.light-mode .terminal-window {
+  background: rgba(255,255,255,0.95);
+  color: #0077ff;
+  border-color: #0077ff;
+  box-shadow: 0 0 40px #0077ffaa, 0 0 0 2px #fff;
+}
+body.light-mode .terminal-window .terminal-content h1,
+.light-mode .terminal-window .terminal-content h1 {
+  color: #0077ff;
+  text-shadow: 0 0 12px #0077ff;
+}
+body.light-mode .terminal-window .terminal-content .description,
+body.light-mode .terminal-window .terminal-content .instruction,
+.light-mode .terminal-window .terminal-content .description,
+.light-mode .terminal-window .terminal-content .instruction {
+  color: #0077ff;
+}
+body.light-mode .terminal-window .terminal-content .start-btn,
+.light-mode .terminal-window .terminal-content .start-btn {
+  background: #0077ff;
+  color: #fff;
+  box-shadow: 0 0 10px #0077ffcc;
+}
+body.light-mode .terminal-window .terminal-content .start-btn:hover,
+.light-mode .terminal-window .terminal-content .start-btn:hover {
+  background: #fff;
+  color: #0077ff;
+  box-shadow: 0 0 20px #0077ff;
+} 

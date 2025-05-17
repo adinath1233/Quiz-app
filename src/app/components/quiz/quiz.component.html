@@ -1,0 +1,38 @@
+<div class="welcome-bg">
+  <div class="terminal-window" *ngIf="currentQuestion">
+    <div class="terminal-bar"></div>
+    <div class="terminal-content">
+      <div class="progress-bar">
+        <div class="progress" [style.width.%]="((currentQuestionIndex + 1) / 10) * 100"></div>
+      </div>
+      <h2 class="question">{{ currentQuestion.question }}</h2>
+      <div class="options">
+        <div
+          *ngFor="let option of currentQuestion.options"
+          class="option"
+          [class.selected]="selectedAnswer === option"
+          (click)="selectAnswer(option)"
+        >
+          {{ option }}
+        </div>
+      </div>
+      <div class="actions">
+        <button
+          class="submit-btn"
+          *ngIf="!showFeedback"
+          [disabled]="!selectedAnswer"
+          (click)="submitAnswer()"
+        >
+          Submit Answer
+        </button>
+        <button
+          class="next-btn"
+          *ngIf="showFeedback"
+          (click)="nextQuestion()"
+        >
+          {{ isLastQuestion ? 'See Results' : 'Next Question' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div> 

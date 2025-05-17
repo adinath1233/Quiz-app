@@ -1,0 +1,46 @@
+<div class="welcome-bg" *ngIf="quizState">
+  <div class="terminal-window">
+    <div class="terminal-bar"></div>
+    <div class="terminal-content">
+      <div class="score-card">
+        <h1>Quiz Results</h1>
+        <div class="score">
+          <div class="score-circle">
+            <span class="score-number">{{ quizState.score }}/{{ quizState.questions.length }}</span>
+            <span class="score-percentage">{{ getScorePercentage() | number:'1.0-0' }}%</span>
+          </div>
+        </div>
+      </div>
+      <div class="questions-review">
+        <h2>Question Review</h2>
+        <div class="question-item" *ngFor="let question of quizState.questions; let i = index">
+          <div class="question-header">
+            <span class="question-number">Question {{ i + 1 }}</span>
+            <span class="question-status" [class.correct]="question.isCorrect" [class.incorrect]="!question.isCorrect">
+              {{ question.isCorrect ? 'Correct' : 'Incorrect' }}
+            </span>
+          </div>
+          <p class="question-text">{{ question.question }}</p>
+          <div class="answer-details">
+            <div class="answer">
+              <strong>Your Answer:</strong>
+              <span [class.correct]="question.userAnswer === question.answer"
+                    [class.incorrect]="question.userAnswer !== question.answer">
+                {{ question.userAnswer }}
+              </span>
+            </div>
+            <div class="answer" *ngIf="!question.isCorrect">
+              <strong>Correct Answer:</strong>
+              <span class="correct">{{ question.answer }}</span>
+            </div>
+            <p class="explanation">{{ question.explanation }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="retry-btn" (click)="retryQuiz()">Retry Same Quiz</button>
+        <button class="new-quiz-btn" (click)="newQuiz()">New Quiz</button>
+      </div>
+    </div>
+  </div>
+</div> 

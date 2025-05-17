@@ -1,0 +1,180 @@
+.welcome-bg {
+  min-height: 100vh;
+  width: 100vw;
+  background: url('/assets/images/Gemini_Generated_Image_dqaijfdqaijfdqai.png') center/cover no-repeat;
+  position: relative;
+  font-family: 'Fira Mono', 'Consolas', 'Courier New', monospace;
+  overflow: hidden;
+}
+
+.welcome-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 30, 0.85);
+  z-index: 1;
+}
+
+.terminal-window {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 8vh auto 0 auto;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  box-shadow: 0 0 40px #00ffe7aa, 0 0 0 2px #222;
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  color: #00ffe7;
+  text-shadow: 0 0 8px #00ffe7cc;
+  font-family: inherit;
+  .terminal-bar {
+    height: 18px;
+    background: #001a1a;
+    border-bottom: 1px solid #00ffe7;
+    border-radius: 8px 8px 0 0;
+    margin: -2.5rem -2rem 2rem -2rem;
+  }
+  .terminal-content {
+    .score-card {
+      background: transparent;
+      border-radius: 10px;
+      box-shadow: none;
+      padding: 0 0 2rem 0;
+      text-align: center;
+      h1 {
+        color: #00ffe7;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 12px #00ffe7;
+      }
+    }
+    .score {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .score-circle {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.7);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 6px solid #00ffe7;
+        box-shadow: 0 0 20px #00ffe7aa;
+        .score-number {
+          font-size: 2.2rem;
+          font-weight: bold;
+          color: #00ffe7;
+          text-shadow: 0 0 8px #00ffe7;
+        }
+        .score-percentage {
+          font-size: 1.2rem;
+          color: #00ffe7cc;
+        }
+      }
+    }
+    .questions-review {
+      h2 {
+        color: #00ffe7;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 0 8px #00ffe7;
+      }
+    }
+    .question-item {
+      background: rgba(0,0,0,0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffe755;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      .question-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        .question-number {
+          font-weight: bold;
+          color: #00ffe7;
+        }
+        .question-status {
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          &.correct {
+            background: #00ffe7;
+            color: #001a1a;
+          }
+          &.incorrect {
+            background: #f44336;
+            color: #fff;
+          }
+        }
+      }
+      .question-text {
+        color: #00ffe7;
+        margin-bottom: 1rem;
+      }
+      .answer-details {
+        background: rgba(0,0,0,0.5);
+        border-radius: 8px;
+        padding: 1rem;
+        .answer {
+          margin-bottom: 0.5rem;
+          strong {
+            color: #00ffe7cc;
+            margin-right: 0.5rem;
+          }
+          span {
+            &.correct {
+              color: #00ffe7;
+            }
+            &.incorrect {
+              color: #f44336;
+            }
+          }
+        }
+        .explanation {
+          color: #00ffe7cc;
+          margin: 0.5rem 0 0;
+          font-size: 0.9rem;
+        }
+      }
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+      button {
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-family: inherit;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px #00ffe7cc;
+        &.retry-btn {
+          background: #00ffe7;
+          color: #001a1a;
+          &:hover {
+            background: #fff;
+            color: #00ffe7;
+            box-shadow: 0 0 20px #00ffe7;
+          }
+        }
+        &.new-quiz-btn {
+          background: #00ffe7;
+          color: #001a1a;
+          &:hover {
+            background: #fff;
+            color: #00ffe7;
+            box-shadow: 0 0 20px #00ffe7;
+          }
+        }
+      }
+    }
+  }
+} 
