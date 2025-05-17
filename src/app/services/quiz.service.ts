@@ -36,7 +36,7 @@ export class QuizService {
   }
 
   async generateQuestions(language: string): Promise<Question[]> {
-    const prompt = `I want you to generate exactly 10 multiple choice questions (MCQs) based on the programming language ${language}. Each question must follow this structure in JSON format:\n\n{\n"question": "",\n"options": [],\n"answer": "1",\n"explanation": ""\n}\n\nReturn a JSON array of 10 such questions.`;
+    const prompt = `I want you to generate exactly 10 multiple choice questions (MCQs) based on the programming language ${language}. Each question must follow this structure in JSON format. Example:\n\n{\n"question": "What does the following ${language} code output?",\n"options": ["10", "20", "Compile Error", "Runtime Error"],\n"answer": "10",\n"explanation": "The code initializes x to 10 and prints it."\n}\n\nReturn a JSON array of 10 such questions.`;
     try {
       const genAI = new GoogleGenerativeAI(environment.geminiApiKey);
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
